@@ -1,6 +1,7 @@
 from django.contrib.auth import get_user_model
 from rest_framework import serializers
 
+from .models.goal import Goal
 from .models.mango import Mango
 from .models.user import User
 
@@ -8,6 +9,14 @@ class MangoSerializer(serializers.ModelSerializer):
     class Meta:
         model = Mango
         fields = ('id', 'name', 'color', 'ripe', 'owner')
+
+
+class GoalSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Goal
+        fields = ('id', 'name', 'chars_per_min', 'language', 'target_date',
+                  'practice_num', 'measurement', 'frequency','created', 'updated', 'owner')
+
 
 class UserSerializer(serializers.ModelSerializer):
     # This model serializer will be used for User creation
