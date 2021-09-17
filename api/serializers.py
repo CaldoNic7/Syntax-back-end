@@ -14,8 +14,8 @@ class MangoSerializer(serializers.ModelSerializer):
 class GoalSerializer(serializers.ModelSerializer):
     class Meta:
         model = Goal
-        fields = ('id', 'name', 'chars_per_min', 'language', 'target_date',
-                  'practice_num', 'measurement', 'frequency','created', 'updated', 'owner')
+        fields = ('id', 'name', 'characters', 'language', 'date',
+                  'time', 'measurement', 'frequency','created', 'updated', 'owner')
 
 
 class UserSerializer(serializers.ModelSerializer):

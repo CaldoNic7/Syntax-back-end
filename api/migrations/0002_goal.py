@@ -17,10 +17,10 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('name', models.CharField(max_length=100)),
-                ('chars_per_min', models.IntegerField()),
+                ('characters', models.IntegerField()),
                 ('language', models.CharField(max_length=100)),
-                ('target_date', models.DateField()),
-                ('practice_num', models.IntegerField()),
+                ('date', models.DateField()),
+                ('time', models.IntegerField()),
                 ('measurement', models.CharField(max_length=100)),
                 ('frequency', models.CharField(max_length=100)),
                 ('owner', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL)),

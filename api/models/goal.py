@@ -6,14 +6,14 @@ class Goal(models.Model):
   # define fields
   # https://docs.djangoproject.com/en/3.0/ref/models/fields/
   name = models.CharField(max_length=100)
-  chars_per_min = models.IntegerField()
+  characters = models.IntegerField()
   language = models.CharField(max_length=100)
   # DateField() expects one of these date formats
 # '2006-10-25'
 # '10/25/2006'
 # '10/25/06'
-  target_date = models.DateField()
-  practice_num = models.IntegerField()
+  date = models.DateField()
+  time = models.IntegerField()
   measurement = models.CharField(max_length=100)
   frequency = models.CharField(max_length=100)
   created = models.DateTimeField(auto_now=True)
@@ -25,17 +25,17 @@ class Goal(models.Model):
 
   def __str__(self):
     # This must return a string
-    return f"I want to type {self.chars_per_min} characters per minute in {self.language}, by {self.target_date}. I will achieve this by practicing {self.practice_num} {self.measurement} every {self.frequency}."
+    return f"I want to type {self.characters} characters per minute in {self.language}, by {self.date}. I will achieve this by practicing {self.time} {self.measurement} every {self.frequency}."
 
   def as_dict(self):
     """Returns dictionary version of Goal models"""
     return {
         'id': self.id,
         'name': self.name,
-        'chars_per_min': self.chars_per_min,
+        'characters': self.characters,
         'language': self.language,
-        'target_date': self.target_date,
-        'practice_num': self.practice_num,
+        'date': self.date,
+        'time': self.time,
         'measurement': self.measurement,
         'frequency': self.frequency,
         'created': self.created,
