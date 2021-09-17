@@ -31,6 +31,7 @@ if os.getenv('ENV') == 'development':
   DEBUG = True
   # Only allow locally running client at port 7165 for CORS
   CORS_ORIGIN_WHITELIST = ['http://localhost:7165']
+  CORS_ORIGIN_WHITELIST = ['http://localhost:4741']
 else:
   # If we are on production, use the dj_database_url package
   # to locate the database based on Heroku setup
